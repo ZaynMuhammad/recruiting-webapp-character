@@ -63,3 +63,11 @@
   align-items: flex-start;
 }
 
+.class-item:hover {
+  cursor: pointer;
+  background-color: #282c34;
+}
+
+.invalid {
+  color: red;
+}

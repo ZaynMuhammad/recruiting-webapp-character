@@ -5,12 +5,12 @@ import { Attributes, Classes, Skills } from './components';
 
 
 function App() {
-  const [strength, setStrength] = useState(0);
-  const [dexterity, setDexterity] = useState(0);
-  const [constitution, setConstitution] = useState(0);
-  const [intelligence, setIntelligence] = useState(0);
-  const [wisdom, setWisdom] = useState(0);
-  const [charisma, setCharisma] = useState(0);
+  const [strength, setStrength] = useState(7);
+  const [dexterity, setDexterity] = useState(7);
+  const [constitution, setConstitution] = useState(7);
+  const [intelligence, setIntelligence] = useState(7);
+  const [wisdom, setWisdom] = useState(7);
+  const [charisma, setCharisma] = useState(7);
 
   return (
     <div className="App">
