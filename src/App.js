@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import './App.css';
 import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from './consts.js';
+import { Attributes } from './components';
 
 
 function App() {
-  const [num, setNum] = useState(0);
+  const [strength, setStrength] = useState(0);
+  const [dexterity, setDexterity] = useState(0);
+  const [constitution, setConstitution] = useState(0);
+  const [intelligence, setIntelligence] = useState(0);
+  const [wisdom, setWisdom] = useState(0);
+  const [charisma, setCharsima] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,10 +19,7 @@ function App() {
       </header>
       <section className="App-section">
         <div>
-          Value:
-          {num}
-          <button>+</button>
-          <button>-</button>
+          <Attributes />
         </div>
       </section>
     </div>
