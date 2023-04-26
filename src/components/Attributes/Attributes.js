@@ -1,4 +1,5 @@
 import { calculateModifier } from "../../utils/calculateModifier"
+import { AttributeItem } from "../AttributeItem/AttributeItem";
 
 export function Attributes({
     strength,
@@ -12,42 +13,32 @@ export function Attributes({
     setConstitution,
     setIntelligence,
     setWisdom,
-    setCharsima
+    setCharisma
 }) {
+
+    const attributes = [
+        { name: "Strength", value: strength, setter: setStrength },
+        { name: "Dexterity", value: dexterity, setter: setDexterity },
+        { name: "Constitution", value: constitution, setter: setConstitution },
+        { name: "Intelligence", value: intelligence, setter: setIntelligence },
+        { name: "Wisdom", value: wisdom, setter: setWisdom },
+        { name: "Charisma", value: charisma, setter: setCharisma },
+    ];
+
     return (
         <div>
             <h2>Attributes</h2>
             <ul className="attributes-list">
-                <li>
-                    <label>Strength: {strength}(Modifier: {calculateModifier(strength)})</label>
-                    <button onClick={() => setStrength(strength + 1)}>+</button>
-                    <button onClick={() => setStrength(strength - 1)}>-</button>
-                </li>
-                <li>
-                        Dexterity: {dexterity}(Modifier: {calculateModifier(dexterity)})
-                        <button onClick={() => setDexterity(dexterity + 1)}>+</button>
-                        <button onClick={() => setDexterity(dexterity - 1)}>-</button>
-                    </li>
-                    <li>
-                        Constitution: {constitution}(Modifier: {calculateModifier(constitution)})
-                        <button onClick={() => setConstitution(constitution + 1)}>+</button>
-                        <button onClick={() => setConstitution(constitution - 1)}>-</button>
-                    </li>
-                    <li>
-                        Intelligence: {intelligence}(Modifier: {calculateModifier(intelligence)})
-                        <button onClick={() => setIntelligence(intelligence + 1)}>+</button>
-                        <button onClick={() => setIntelligence(intelligence - 1)}>-</button>
-                    </li>
-                    <li>
-                        Wisdom: {wisdom}(Modifier: {calculateModifier(wisdom)})
-                        <button onClick={() => setWisdom(wisdom + 1)}>+</button>
-                        <button onClick={() => setWisdom(wisdom - 1)}>-</button>
-                    </li>
-                    <li>
-                        Charisma: {charisma}(Modifier: {calculateModifier(charisma)})
-                        <button onClick={() => setCharsima(charisma + 1)}>+</button>
-                        <button onClick={() => setCharsima(charisma - 1)}>-</button>
-                    </li>
+                {attributes.map(({ name, value, setter }) => (
+                    <AttributeItem
+                        key={name}
+                        name={name}
+                        value={value}
+                        modifier={calculateModifier(value)}
+                        increment={() => setter(value + 1)}
+                        decrement={() => setter(value - 1)}
+                    />
+                ))}
             </ul>
         </div>
     )

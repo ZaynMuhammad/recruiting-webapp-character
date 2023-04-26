@@ -10,7 +10,7 @@ function App() {
   const [constitution, setConstitution] = useState(0);
   const [intelligence, setIntelligence] = useState(0);
   const [wisdom, setWisdom] = useState(0);
-  const [charisma, setCharsima] = useState(0);
+  const [charisma, setCharisma] = useState(0);
 
   return (
     <div className="App">
@@ -31,7 +31,7 @@ function App() {
             setConstitution={setConstitution}
             setIntelligence={setIntelligence}
             setWisdom={setWisdom}
-            setCharsima={setCharsima}
+            setCharisma={setCharisma}
           />
         </div>
       </section>
