@@ -42,7 +42,15 @@ function App() {
             wisdom={wisdom}
             charisma={charisma}
           />
-          <Skills />
+          <Skills
+            SKILL_LIST={SKILL_LIST}
+            strength={strength}
+            dexterity={dexterity}
+            constitution={constitution}
+            intelligence={intelligence}
+            wisdom={wisdom}
+            charisma={charisma}
+          />
         </div>
       </section>
     </div>

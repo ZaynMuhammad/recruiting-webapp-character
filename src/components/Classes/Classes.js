@@ -48,8 +48,7 @@ export function Classes({
         <div>
             <h2>Classes:</h2>
             <ul ref={clickOutsideRef} className="classes-list">
-                {Object.keys(CLASS_LIST).map((className) => {
-                    return (
+                {Object.keys(CLASS_LIST).map((className) => (
                         <li
                             key={className}
                             className="class-item"
@@ -58,8 +57,7 @@ export function Classes({
                             
                             <p className={`${canPickClass(className) ? '' : 'invalid'}`}>{className}</p>
                         </li>
-                    )
-                })}
+                    ))}
             </ul>
             {isOutsideClick ? null :
                 <ClassRequirementsMenu

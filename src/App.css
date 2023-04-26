@@ -1,3 +1,9 @@
+* {
+  border-box: box-sizing;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   min-height: 100vh;
   text-align: center;
@@ -48,6 +54,7 @@
 .container {
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 
 .attributes-list {
@@ -60,7 +67,7 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .class-item:hover {
@@ -70,4 +77,11 @@
 
 .invalid {
   color: red;
+}
+
+.skills-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
