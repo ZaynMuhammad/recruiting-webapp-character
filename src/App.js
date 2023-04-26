@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from './consts.js';
-import { Attributes } from './components';
+import { Attributes, Classes, Skills } from './components';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <h1>React Coding Exercise</h1>
       </header>
       <section className="App-section">
-        <div>
+        <div className="container">
           <Attributes
             strength={strength}
             dexterity={dexterity}
@@ -33,6 +33,8 @@ function App() {
             setWisdom={setWisdom}
             setCharisma={setCharisma}
           />
+          <Classes />
+          <Skills />
         </div>
       </section>
     </div>

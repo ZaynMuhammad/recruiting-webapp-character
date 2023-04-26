@@ -45,8 +45,14 @@
   }
 }
 
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .attributes-list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
 }
+
