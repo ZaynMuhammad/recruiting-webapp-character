@@ -19,7 +19,20 @@ function App() {
       </header>
       <section className="App-section">
         <div>
-          <Attributes />
+          <Attributes
+            strength={strength}
+            dexterity={dexterity}
+            constitution={constitution}
+            intelligence={intelligence}
+            wisdom={wisdom}
+            charisma={charisma}
+            setStrength={setStrength}
+            setDexterity={setDexterity}
+            setConstitution={setConstitution}
+            setIntelligence={setIntelligence}
+            setWisdom={setWisdom}
+            setCharsima={setCharsima}
+          />
         </div>
       </section>
     </div>
