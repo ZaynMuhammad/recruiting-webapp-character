@@ -33,7 +33,15 @@ function App() {
             setWisdom={setWisdom}
             setCharisma={setCharisma}
           />
-          <Classes />
+          <Classes
+            CLASS_LIST={CLASS_LIST}
+            strength={strength}
+            dexterity={dexterity}
+            constitution={constitution}
+            intelligence={intelligence}
+            wisdom={wisdom}
+            charisma={charisma}
+          />
           <Skills />
         </div>
       </section>
