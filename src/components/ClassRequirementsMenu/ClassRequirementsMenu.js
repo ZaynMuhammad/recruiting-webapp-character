@@ -12,8 +12,7 @@ export function ClassRequirementsMenu({ CLASS_LIST, pickedClass }) {
                                     {attributeName}: {CLASS_LIST[pickedClass][attributeName]}
                                 </li>
                             )
-                        })) :
-                        null
+                        })) : null
                 }
             </ul>
         </div>

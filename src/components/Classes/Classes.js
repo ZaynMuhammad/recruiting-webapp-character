@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ClassRequirementsMenu } from '../ClassRequirementsMenu/ClassRequirementsMenu';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 export function Classes({
     CLASS_LIST,
@@ -11,7 +12,11 @@ export function Classes({
     charisma
 }) {
 
-    const [pickedClass, setPickedClass] = useState('')
+    const [pickedClass, setPickedClass] = useState('');
+    const clickOutsideRef = useRef(null);
+
+    const isOutsideClick = useOutsideClick(clickOutsideRef);
+
     
     function canPickClass(className) {
         const attributes = {
@@ -42,7 +47,7 @@ export function Classes({
     return (
         <div>
             <h2>Classes:</h2>
-            <ul className="classes-list">
+            <ul ref={clickOutsideRef} className="classes-list">
                 {Object.keys(CLASS_LIST).map((className) => {
                     return (
                         <li
@@ -56,10 +61,12 @@ export function Classes({
                     )
                 })}
             </ul>
-            <ClassRequirementsMenu
-                pickedClass={pickedClass}
-                CLASS_LIST={CLASS_LIST}
-            />
+            {isOutsideClick ? null :
+                <ClassRequirementsMenu
+                    pickedClass={pickedClass}
+                    CLASS_LIST={CLASS_LIST}
+                />
+            }
         </div>
     );
 }
