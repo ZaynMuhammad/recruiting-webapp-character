@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ClassRequirementsMenu } from '../ClassRequirementsMenu/ClassRequirementsMenu';
 
 export function Classes({
     CLASS_LIST,
@@ -55,6 +56,10 @@ export function Classes({
                     )
                 })}
             </ul>
+            <ClassRequirementsMenu
+                pickedClass={pickedClass}
+                CLASS_LIST={CLASS_LIST}
+            />
         </div>
     );
 }

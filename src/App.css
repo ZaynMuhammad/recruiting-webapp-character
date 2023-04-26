@@ -56,7 +56,7 @@
   flex-direction: column;
 }
 
-.classes-list {
+.classes-list, .class-req-list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
